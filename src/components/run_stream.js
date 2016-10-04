@@ -12,7 +12,6 @@ class RunStream extends React.Component{
   constructor(props){
     super(props)
     this.state = {videos: this.props.actions.fetchWrVideos().payload, streams: this.props.actions.fetchStreams().payload }
-    debugger
   }
 
   render(){
