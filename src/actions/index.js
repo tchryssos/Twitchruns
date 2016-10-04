@@ -1,9 +1,7 @@
 export function fetchRunners(){
   const runners = fetch('http://localhost:3000/api/v1/runners').then(response => {
-    debugger
   return response.json()
 }).then(runnersPayload => {
-  debugger
   return runnersPayload
 })
 
@@ -15,10 +13,8 @@ return {
 
 export function fetchRuns(){
   const runners = fetch('http://localhost:3000/api/v1/runs').then(response => {
-    debugger
   return response.json()
 }).then(runnersPayload => {
-  debugger
   return runnersPayload
 })
 

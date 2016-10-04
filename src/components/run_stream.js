@@ -12,11 +12,14 @@ class RunStream extends React.Component{
   constructor(props){
     super(props)
     this.state = {videos: this.props.actions.fetchWrVideos().payload, streams: this.props.actions.fetchStreams().payload }
+    debugger
   }
 
   render(){
     return(
+
       <div>
+        <SelectedStream video={this.state.videos[0].url}/>
         <SideBar wrVideos={this.state.videos} streamVideos={this.state.streams}/>
       </div>
     )
@@ -29,5 +32,3 @@ function mapDispatchToProps(dispatch){
 
  const componentCreator = connect(null, mapDispatchToProps)
  export default componentCreator(RunStream)
-
-
