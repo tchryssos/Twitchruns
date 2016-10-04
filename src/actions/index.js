@@ -1,13 +1,15 @@
-export function fetchCurrentRuns(){
-  const runs = fetch('http://localhost:3000/api/v1/runs').then(response => {
+export function fetchRunners(){
+  const runners = fetch('http://localhost:3000/api/v1/runners').then(response => {
+    debugger
   return response.json()
-}).then(runsPayload => {
-  return runsPayload
+}).then(runnersPayload => {
+  debugger
+  return runnersPayload
 })
 
 return {
-  type: 'FETCH_CURRENT_RUNS',
-  payload: runs
+  type: 'FETCH_RUNNERS',
+  payload: runners
 }
 }
 
