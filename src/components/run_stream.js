@@ -6,6 +6,7 @@ import SelectedStream from './selected_stream'
 export default class RunStream extends React.Component{
 
   render(){
-
+    <div className='container-fluid'>
+    </div>
   }
 }
