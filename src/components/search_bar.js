@@ -5,7 +5,7 @@ export default function SearchBar(props){
   return (
     <div className="container">
         <div className="row">
-            <div className="col-md-4 col-md-offset-3">
+            <div className="col-md-4 col-md-offset-3" style={{float: 'right'}}>
                 <form action="" className="search-form">
                     <div className="form-group has-feedback">
                 		<label htmlFor="search" className="sr-only">Search</label>
