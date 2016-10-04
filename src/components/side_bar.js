@@ -7,16 +7,16 @@ class SideBar extends React.Component {
         super(props)
 
     }
-   
+
      wrInAppLinks(){
-        const wrInAppLinks = this.props.wrVideos.map((video, i)=> 
+        const wrInAppLinks = this.props.wrVideos.map((video, i)=>
          (<WRThumbnail video={video} key={i}/>)
         )
         return wrInAppLinks
      }
 
     twitchInAppLinks(){
-        const twitchInAppLinks = this.props.streamVideos.map((video, i)=> 
+        const twitchInAppLinks = this.props.streamVideos.map((video, i)=>
          (<TwitchThumbnail video={video} key={i}/>)
         )
         return twitchInAppLinks
@@ -31,8 +31,6 @@ class SideBar extends React.Component {
         )
     }
 }
- 
+
 export default SideBar
 // {this.props.wrVideos.map((video, i) => <WRThumbnail video={video} key={i}/>) }
-
-                
