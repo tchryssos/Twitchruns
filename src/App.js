@@ -5,6 +5,7 @@ import NavBar from './components/nav_bar'
 import RunStream from './components/run_stream'
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -15,7 +16,7 @@ class App extends Component {
         <div>
         <RunStream />
         </div>
-        
+
       </div>
     );
   }
