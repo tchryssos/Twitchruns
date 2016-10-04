@@ -5,6 +5,7 @@ import NavBar from './components/nav_bar'
 import RunNail from './components/run_nail'
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -14,7 +15,7 @@ class App extends Component {
         <div>
           <RunNail />
         </div>
-        
+
       </div>
     );
   }
