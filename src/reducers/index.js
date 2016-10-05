@@ -7,7 +7,7 @@ import run_nail_reducer from './run_nail_reducer'
 const rootReducer =  combineReducers({
   runs: runsReducer,
   runners: runnersReducer,
-  run_nail: run_nail_reducer
+  run_nail: run_nail_reducer,
 })
 
 export default rootReducer;

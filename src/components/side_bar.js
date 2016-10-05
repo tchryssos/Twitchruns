@@ -9,10 +9,13 @@ class SideBar extends React.Component {
     }
 
      wrInAppLinks(){
-        const wrInAppLinks = this.props.wrVideos.map((video, i)=>
-         (<div className='row'><WRThumbnail video={video} key={i}/></div>)
-        )
-        return wrInAppLinks
+       return (
+        <div>
+          <div className="row"><WRThumbnail run={this.props.wrVideos[1]}/></div>
+          <div className="row"><WRThumbnail run={this.props.wrVideos[2]}/></div>
+          <div className="row"><WRThumbnail run={this.props.wrVideos[3]}/></div>
+        </div>
+       )
      }
 
     twitchInAppLinks(){
