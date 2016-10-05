@@ -17,6 +17,7 @@ import {fetchRunners, fetchRuns} from './actions'
 const store = createStore(rootReducer, applyMiddleware(ReduxPromise))
 
 store.dispatch(fetchRuns())
+store.dispatch(fetchRunners())
 
 ReactDOM.render(
   <Provider store={store} >

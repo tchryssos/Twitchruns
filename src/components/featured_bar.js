@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
    }
 
    const FeaturedVideoList = props.videoList.map((run, i)=>{
-     return <FeaturedVideo key={i} picUrl={GetThumbnail(run.run_url)} runId={run.id} />
+     return <FeaturedVideo key={i} picUrl={GetThumbnail(run.run_url)} runId={run.id} runnerId={run.runner_id} />
    })
 
   return(
