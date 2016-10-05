@@ -40,10 +40,40 @@ function mapStateToProps(state, ownProps) {
               speedrun_id: "",
               id: 1,
               run_url:"pk=pq",
-              runner_id: 1}}
-  }
-
-}
+              runner_id: 1,
+              run_placement: {
+name: "Super Mario 64",
+category: "120 Star",
+place: 1
+},
+              runner: {
+                  username: "cheese05",
+                  id: 1,
+                  stream_url: "https://www.twitch.tv/cheese05",
+                  twitch_id: null},
+              game: {
+    name: "Super Mario 64",
+    id: 1,
+    artwork_url: "http://www.mobygames.com/images/covers/l/216304-super-mario-64-nintendo-64-front-cover.jpg"
+    },
+    category_leaderboard: {
+    title: "120 Star",
+    rules: "Complete the game while collecting every star. No restrictions. All forms of BLJ are allowed. Timing starts from reset and ends when the big star is collected at the end of the game.",
+    placement_list: {
+    1: "8m73rgwy",
+    2: "1zqjp35m",
+    3: "3",
+    4: "4",
+    5: "5",
+    6: "6",
+    7: "7",
+    8: "8",
+    9: "9",
+    10: "10"
+    }
+    }
+                }}
+  }}
 function mapDispatchToProps(dispatch){
    return {actions: bindActionCreators(actions, dispatch)}
 }

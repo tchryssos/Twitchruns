@@ -11,9 +11,12 @@ class FeaturedVideo extends React.Component {
 
   render(){
     return(
-      <Link to={`/runs/${this.props.runId}`}>
+      <Link to={`/runs/${this.props.run.id}`}>
        <div className='col-md-2' >
         <img src={this.props.picUrl} />
+        <div className='row'>
+        <p>{this.props.run.run_placement.name}: {this.props.run.run_placement.category}</p>
+        </div>
        </div>
        </Link>
 
