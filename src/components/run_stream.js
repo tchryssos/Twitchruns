@@ -27,6 +27,7 @@ class RunStream extends React.Component{
 function mapStateToProps(state, ownProps) {
   if (state.runs.length > 0){
   const run = state.runs.find((run) => {return run.id == ownProps.params.id})
+
   const runner = state.runners.find((runner)=> {return runner.id == run.runner_id})
   return {run: run, runner: runner}
   }
