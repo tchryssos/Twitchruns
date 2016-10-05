@@ -1,49 +1,30 @@
-import React from 'react';
-import FeaturedVideo from './featured_video';
-import { connect } from 'react-redux';
-// import RunCarousel from './coverflow'
+import React from 'react'
+// var ReactDOM = require('react-dom');
 import Coverflow from 'react-coverflow';
-import {Link} from 'react-router'
+import { connect } from 'react-redux';
 
- function FeaturedBar(props){
-
-   const GetThumbnail = (run) =>{
-
-     if (run.run_url.includes("youtube")) {
-     const endpoint = 'http://img.youtube.com/vi/' + run.run_url.split('=')[1] + '/1.jpg'
-      return endpoint }
-     else {
-       const endpoint = run.game.artwork_url
+var fn = function () {
+  /* do you want */
+}
 
 
-       return endpoint
-     }
-   }
 
-
-  //  const FeaturedVideoList = props.videoList.map((run, i)=>{
-  //    return <FeaturedVideo key={i} picUrl={GetThumbnail(run)} run={run} runnerId={run.runner_id} />
-  //  })
-
-  const FeaturedVideoList = props.videoList.map((run, i)=>{
-    return <Link to={`/runs/${run.id}`}><img height='100px' width='180px' src={GetThumbnail(run)} /></Link>
+export default function RunCarousel(){
+  const imageMap = props.list.map((run)=>{
+    return <img src=
   })
-
-  // return(
-  //   <div className='container-fluid' style={{background: 'black'}}>
-  //     // {FeaturedVideoList}
-  //     <RunCarousel list={props.videoList} ></RunCarousel>
-  //   </div>
-  // )
   return(<Coverflow
     width={960}
-    height={240}
+    height={480}
     displayQuantityOfSide={2}
     navigation={false}
     enableHeading={false}
     >
-    {FeaturedVideoList}
+    <img src='[image/path/please_change]' alt='title or description' data-action={fn} />
+    <img src='[image/path/please_change]' alt='title or description' data-action="http://andyyou.github.io/react-coverflow/"/>
+    <img src='[image/path/please_change]' alt='title or description' data-action="http://andyyou.github.io/react-coverflow/"/>
   </Coverflow>)
+
 }
 
 function mapStateToProps(state, ownProps) {
@@ -91,4 +72,4 @@ place: 1
       }
 }
 const componentCreator = connect(mapStateToProps)
-export default componentCreator(FeaturedBar);
+export default componentCreator(RunCarousel);
