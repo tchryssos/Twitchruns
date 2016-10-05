@@ -12,11 +12,11 @@ import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise'
 import rootReducer from './reducers';
 
-import {fetchRunners} from './actions'
+import {fetchRunners, fetchRuns} from './actions'
 
 const store = createStore(rootReducer, applyMiddleware(ReduxPromise))
 
-store.dispatch(fetchRunners())
+store.dispatch(fetchRuns())
 
 ReactDOM.render(
   <Provider store={store} >

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/nav_bar'
 import RunStream from './components/run_stream'
+import FeaturedBar from './components/featured_bar'
 
 class App extends Component {
 
@@ -10,11 +11,9 @@ class App extends Component {
     return (
       <div className="App">
         < NavBar/>
-
-        <h2>Is this goan work?</h2>
-
+        <FeaturedBar />
         <div>
-        <RunStream />
+        {this.props.children}
         </div>
 
       </div>

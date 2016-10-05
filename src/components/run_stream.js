@@ -16,19 +16,34 @@ class RunStream extends React.Component{
   }
 
   render(){
+
     return(
 
       <div>
-        <SelectedStream video={this.state.videos[0].url}/>
+        <SelectedStream run={this.props.run}/>
         <SideBar wrVideos={this.state.videos} streamVideos={this.state.streams}/>
       </div>
     )
   }
 }
 
+function mapStateToProps(state, ownProps) {
+  if (state.runs.length > 0){
+  const run = state.runs.find((run) => {return run.id == ownProps.params.id})
+  return {run: run}
+  }
+  else{
+    return {run: {
+              speedrun_id: "",
+              id: 1,
+              run_url:"pk=pq",
+              runner_id: 1}}
+  }
+
+}
 function mapDispatchToProps(dispatch){
    return {actions: bindActionCreators(actions, dispatch)}
 }
 
- const componentCreator = connect(null, mapDispatchToProps)
+ const componentCreator = connect(mapStateToProps, mapDispatchToProps)
  export default componentCreator(RunStream)

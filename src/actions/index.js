@@ -12,7 +12,7 @@ return {
 }
 
 export function fetchRuns(){
-  const runners = fetch('http://localhost:3000/api/v1/runs').then(response => {
+  const runs = fetch('http://localhost:3000/api/v1/runs').then(response => {
   return response.json()
 }).then(runnersPayload => {
   return runnersPayload
@@ -20,7 +20,7 @@ export function fetchRuns(){
 
 return {
   type: 'FETCH_RUNS',
-  payload: runners
+  payload: runs
 }
 
 }
