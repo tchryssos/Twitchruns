@@ -68,6 +68,14 @@ export function fetchWrVideos(){
 }
 
 export function fetchStreams(){
+
+   const leaderboard = fetch('http://localhost:3000/api/v1/streams/51').then(response => {
+     return response.json()
+    }).then(leadersPayload => {
+    return leadersPayload
+})
+debugger
+
   const streamVideoObjects = ["http://fake.com", "http://fake.com", "http://fake.com"]
   return {
     type: 'FETCH_STREAMS',
