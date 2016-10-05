@@ -1,5 +1,5 @@
 export function fetchRunners(){
-  const runners = fetch('http://localhost:3000/api/v1/runners').then(response => {
+  const runners = fetch('http://troy.local:3000/api/v1/runners').then(response => {
   return response.json()
 }).then(runnersPayload => {
   return runnersPayload
@@ -12,7 +12,7 @@ return {
 }
 
 export function fetchRuns(){
-  const runs = fetch('http://localhost:3000/api/v1/runs').then(response => {
+  const runs = fetch('http://troy.local:3000/api/v1/runs').then(response => {
   return response.json()
 }).then(runnersPayload => {
   return runnersPayload
@@ -39,7 +39,7 @@ return {
 }
 
 export function fetchWrVideos(){
-//   const leaderboard = fetch('http://localhost:3000/api/v1/category_leaderboards').then(response => {
+//   const leaderboard = fetch('http://troy.local:3000/api/v1/category_leaderboards').then(response => {
 //   return response.json()
 // }).then(leadersPayload => {
 //   return leadersPayload
