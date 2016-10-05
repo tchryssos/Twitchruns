@@ -2,30 +2,35 @@ import React from 'react'
 import * as actions from '../actions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import {Link} from 'react-router'
 
 class WRThumbnail extends React.Component {
-    
+
     constructor(props){
-        super(props) 
+        super(props)
+
+
         // this.set.setCurrentVid() = this.setCurrentVid().bind(this)
         // debugger
     }
 
     setCurrentVid(url){
-        this.props.actions.setCurrentVid(url)
+        this.props.actions.setCurrentVideo(url)
+    }
+
+    youtubeThumbnailUrl(url){
+      return `http://img.youtube.com/vi/${url.substr(32,20)}/1.jpg`
     }
 
     render(){
         return(
             <div className="pull-right">
                 <div>
-                    {this.props.video.name} :
-                    <br/>
-                    <img src={this.props.video.thumbnail} role="presentation" onClick={()=> this.setCurrentVid(this.props.video.url)}/>
+                      <Link to={`/runs/${this.props.run.id}`}><img src={this.youtubeThumbnailUrl(this.props.run["run_url"])} role="presentation"/></Link>
                 </div>
             </div>
         )
-    }  
+    }
 }
 
 function mapDispatchToProps(dispatch){
@@ -34,6 +39,3 @@ function mapDispatchToProps(dispatch){
 
  const componentCreator = connect(null, mapDispatchToProps)
  export default componentCreator(WRThumbnail)
-
-
-
