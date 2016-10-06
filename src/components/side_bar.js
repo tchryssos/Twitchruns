@@ -18,21 +18,21 @@ class SideBar extends React.Component {
        )
      }
 
-    twitchInAppLinks(){
-        const twitchInAppLinks = this.props.streamVideos.map((video, i)=>{
-         return (
-           <div className='row'>
-           <TwitchThumbnail video={video} key={i}/>
-         </div>)
-       })
-        return twitchInAppLinks
-     }
-
+    // twitchInAppLinks(){
+    //     const twitchInAppLinks = this.props.streamVideos.map((video, i)=>{
+    //      return (
+    //        <div className='row'>
+    //        <TwitchThumbnail video={video} key={i}/>
+    //      </div>)
+    //    })
+    //     return twitchInAppLinks
+    //  }
+                // {this.twitchInAppLinks()
     render(){
         return (
-            <div className='pull-right' style={{padding: '30px 30px 4cm 0px'}}>
+            <div className='pull-right' style={{padding: '180px 30px 4cm 0px'}}>
                 {this.wrInAppLinks()}
-                {this.twitchInAppLinks()}
+}
             </div>
         )
     }
