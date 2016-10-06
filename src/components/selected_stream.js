@@ -12,7 +12,6 @@ export default function SelectedStream(props){
     var videoArray = props.run.run_url.split('/')
     var videoId = videoArray[videoArray.length - 1]
     var twitchUrl = 'https://player.twitch.tv/?video=v' + videoId
-    debugger
     var videoEmbed =   <iframe width="600" height="450" src={twitchUrl} allowFullScreen>
             </iframe>
   }

@@ -40,7 +40,7 @@ return {
 }
 
 export function fetchTwitchStreams(run){
-  const liveStreams=fetch(`http://localhost:3000/api/v1/streams`, {
+  const liveStreams=fetch(`${apiBaseLink}/streams`, {
     method: 'post',
     headers: {
      "Content-type": "application/json",

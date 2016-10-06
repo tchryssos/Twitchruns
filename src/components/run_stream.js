@@ -18,7 +18,7 @@ class RunStream extends React.Component{
     return(
       <div>
         <SelectedStream run={this.props.run}/>
-        <SideBar wrVideos={this.props.run.category_leaderboard.placement_list} streamVideos={this.state.streams}/>
+        <SideBar wrVideos={this.props.run.category_leaderboard.placement_list}/>
       </div>
     )
   }
