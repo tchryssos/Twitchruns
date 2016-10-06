@@ -12,11 +12,12 @@ import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise'
 import rootReducer from './reducers';
 
-import {fetchRunners, fetchRuns} from './actions'
+import {fetchRunners, fetchTenRuns, fetchAllRuns} from './actions'
 
 const store = createStore(rootReducer, applyMiddleware(ReduxPromise))
 
-store.dispatch(fetchRuns())
+store.dispatch(fetchTenRuns())
+store.dispatch(fetchAllRuns())
 store.dispatch(fetchRunners())
 
 ReactDOM.render(

@@ -11,18 +11,28 @@ return {
 }
 }
 
-export function fetchRuns(){
+export function fetchAllRuns(){
   const runs = fetch('https://twitchruns-api.herokuapp.com/api/v1/runs').then(response => {
   return response.json()
 }).then(runnersPayload => {
   return runnersPayload
 })
-
 return {
   type: 'FETCH_RUNS',
   payload: runs
 }
+}
 
+export function fetchTenRuns(){
+  const runs = fetch('https://twitchruns-api.herokuapp.com/api/v1/runs?limit=10').then(response => {
+  return response.json()
+}).then(runnersPayload => {
+  return runnersPayload
+})
+return {
+  type: 'FETCH_RUNS',
+  payload: runs
+}
 }
 
 export function fetchLeaderboard(){
@@ -67,21 +77,21 @@ export function fetchWrVideos(){
 
 }
 
-export function fetchStreams(){
+// export function fetchStreams(){
 
-   const leaderboard = fetch('https://twitchruns-api.herokuapp.com/api/v1/streams/51').then(response => {
-     return response.json()
-    }).then(leadersPayload => {
-    return leadersPayload
-})
-debugger
+//    const leaderboard = fetch('https://twitchruns-api.herokuapp.com/api/v1/streams/51').then(response => {
+//      return response.json()
+//     }).then(leadersPayload => {
+//     return leadersPayload
+// })
+// debugger
 
-  const streamVideoObjects = ["http://fake.com", "http://fake.com", "http://fake.com"]
-  return {
-    type: 'FETCH_STREAMS',
-    payload: streamVideoObjects
-  }
-}
+//   const streamVideoObjects = ["http://fake.com", "http://fake.com", "http://fake.com"]
+//   return {
+//     type: 'FETCH_STREAMS',
+//     payload: streamVideoObjects
+//   }
+// }
 
 export function setCurrentVideo(url){
   const currentVideoUrl = url

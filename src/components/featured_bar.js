@@ -7,6 +7,7 @@ import {Link} from 'react-router'
 
  function FeaturedBar(props){
 
+ 
    const GetThumbnail = (run) =>{
 
      if (run.run_url.includes("youtube")) {
