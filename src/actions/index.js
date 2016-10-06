@@ -1,5 +1,5 @@
 export function fetchRunners(){
-  const runners = fetch('http://troy.local:3000/api/v1/runners').then(response => {
+  const runners = fetch('https://twitchruns-api.herokuapp.com/api/v1/runners').then(response => {
   return response.json()
 }).then(runnersPayload => {
   return runnersPayload
@@ -12,7 +12,7 @@ return {
 }
 
 export function fetchRuns(){
-  const runs = fetch('http://troy.local:3000/api/v1/runs').then(response => {
+  const runs = fetch('https://twitchruns-api.herokuapp.com/api/v1/runs').then(response => {
   return response.json()
 }).then(runnersPayload => {
   return runnersPayload
@@ -69,7 +69,7 @@ export function fetchWrVideos(){
 
 export function fetchStreams(){
 
-   const leaderboard = fetch('http://localhost:3000/api/v1/streams/51').then(response => {
+   const leaderboard = fetch('https://twitchruns-api.herokuapp.com/api/v1/streams/51').then(response => {
      return response.json()
     }).then(leadersPayload => {
     return leadersPayload

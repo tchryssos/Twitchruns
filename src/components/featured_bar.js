@@ -1,5 +1,5 @@
 import React from 'react';
-import FeaturedVideo from './featured_video';
+// import FeaturedVideo from './featured_video';
 import { connect } from 'react-redux';
 // import RunCarousel from './coverflow'
 import Coverflow from 'react-coverflow';
@@ -26,7 +26,27 @@ import {Link} from 'react-router'
   //  })
 
   const FeaturedVideoList = props.videoList.map((run, i)=>{
-    return <Link to={`/runs/${run.id}`}><img height='100px' width='180px' src={GetThumbnail(run)} /></Link>
+    let trophy = ''
+    let bg = ''
+    switch(run.run_placement.place){
+      case 1:
+        trophy = 'World Record'
+        bg = 'gold'
+        break;
+      case 2:
+        trophy = '2nd Place'
+        bg = 'silver'
+        break;
+      default:
+        trophy ='3rd Place'
+        bg = 'brown'
+    }
+    return (<div className='col-md-2' >
+              <div className='row'>{run.run_placement.category}</div>
+              <Link to={`/runs/${run.id}`}><img height='100px' width='180px' src={GetThumbnail(run)} /></Link>
+              <div className='row' style={{backgroundColor: bg}}>{trophy}</div>
+            </div>
+            )
   })
 
   // return(
@@ -36,10 +56,11 @@ import {Link} from 'react-router'
   //   </div>
   // )
   return(<Coverflow
-    width={960}
+    width={1100}
     height={240}
     displayQuantityOfSide={2}
     navigation={false}
+    enableScroll={true}
     enableHeading={false}
     >
     {FeaturedVideoList}
