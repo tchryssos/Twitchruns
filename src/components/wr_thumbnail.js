@@ -8,14 +8,17 @@ class WRThumbnail extends React.Component {
 
     constructor(props){
         super(props)
+        this.onWrClick=this.onWrClick.bind(this)
+
 
 
         // this.set.setCurrentVid() = this.setCurrentVid().bind(this)
         // debugger
     }
 
-    setCurrentVid(url){
-        this.props.actions.setCurrentVideo(url)
+    onWrClick(){
+        this.props.actions.fetchTwitchStreams(this.props.run)
+        // this.props.actions.setCurrentRun(run)
     }
 
     youtubeThumbnailUrl(url){
@@ -26,7 +29,7 @@ class WRThumbnail extends React.Component {
         return(
             <div className="pull-right">
                 <div>
-                      <Link to={`/runs/${this.props.run.id}`}><img src={this.youtubeThumbnailUrl(this.props.run["run_url"])} role="presentation"/></Link>
+                      <Link to={`/runs/${this.props.run.id}`} onClick={this.onWrClick}><img src={this.youtubeThumbnailUrl(this.props.run["run_url"])} role="presentation"/></Link>
                 </div>
             </div>
         )

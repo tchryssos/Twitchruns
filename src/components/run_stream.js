@@ -11,7 +11,7 @@ class RunStream extends React.Component{
 
   constructor(props){
     super(props)
-    this.state = {videos: this.props.run, streams: this.props.actions.fetchStreams().payload }
+    this.state = {videos: this.props.run }
   }
 
   render(){

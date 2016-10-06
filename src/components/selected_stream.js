@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 export default function SelectedStream(props){
-  debugger
   let videoUrl = ''
   if (props.run.run_url.includes('youtube')){
     const videoUrlArray = props.run.run_url.split('=')
