@@ -14,9 +14,22 @@ class WRThumbnail extends React.Component {
 
     youtubeThumbnailUrl(url){
       return `http://img.youtube.com/vi/${url.substr(32,20)}/1.jpg`
-    }
+
+    thumbnailUrl(run){
+
+        if (run.run_url.includes("youtube")) {
+            const endpoint = 'http://img.youtube.com/vi/' + run.run_url.split('=')[1] + '/1.jpg'
+            return endpoint
+        }
+        else {
+            const endpoint = this.props.gameArt
+            return endpoint
+         }
+        }
+
 
     render(){
+
         return(
             <div className="pull-right">
                 <div>
