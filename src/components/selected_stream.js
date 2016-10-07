@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 export default function SelectedStream(props){
-  debugger
   let videoUrl = ''
   if (props.run.run_url.includes('youtube')){
     const videoUrlArray = props.run.run_url.split('=')
@@ -13,7 +12,6 @@ export default function SelectedStream(props){
     var videoArray = props.run.run_url.split('/')
     var videoId = videoArray[videoArray.length - 1]
     var twitchUrl = 'https://player.twitch.tv/?video=v' + videoId
-    debugger
     var videoEmbed =   <iframe width="600" height="450" src={twitchUrl} allowFullScreen>
             </iframe>
   }

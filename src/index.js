@@ -12,12 +12,13 @@ import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise'
 import rootReducer from './reducers';
 
-import {fetchRunners, fetchRuns} from './actions'
+import {fetchRunners, fetchRuns, fetchTwitchStreams} from './actions'
 
 const store = createStore(rootReducer, applyMiddleware(ReduxPromise))
 
 store.dispatch(fetchRuns())
 store.dispatch(fetchRunners())
+// store.dispatch(fetchTwitchStreams())
 
 ReactDOM.render(
   <Provider store={store} >
