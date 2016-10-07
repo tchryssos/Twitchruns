@@ -13,9 +13,9 @@ class SideBar extends React.Component {
      wrInAppLinks(){
        return (
         <div>
-          <div className="row"><WRThumbnail run={this.props.wrVideos[1]}/></div>
-          <div className="row"><WRThumbnail run={this.props.wrVideos[2]}/></div>
-          <div className="row"><WRThumbnail run={this.props.wrVideos[3]}/></div>
+          <div className="row"><WRThumbnail run={this.props.wrVideos[1]} gameArt={this.props.gameArt}/></div>
+          <div className="row"><WRThumbnail run={this.props.wrVideos[2]} gameArt={this.props.gameArt}/></div>
+          <div className="row"><WRThumbnail run={this.props.wrVideos[3]}gameArt={this.props.gameArt}/></div>
         </div>
        )
      }
@@ -35,7 +35,9 @@ class SideBar extends React.Component {
                 width="180"
                 frameborder="0"
                 scrolling="no"
+                muted="true"
                 allowfullscreen="true">
+
               </iframe>
              </div>
              <div id="twitch-2">
@@ -45,6 +47,7 @@ class SideBar extends React.Component {
               width="180"
               frameborder="0"
               scrolling="no"
+              muted="true"
               allowfullscreen="true">
             </iframe>
              </div>
