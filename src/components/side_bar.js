@@ -32,7 +32,6 @@ class SideBar extends React.Component {
         return (
             <div className='pull-right' style={{padding: '180px 30px 4cm 0px'}}>
                 {this.wrInAppLinks()}
-}
             </div>
         )
     }
