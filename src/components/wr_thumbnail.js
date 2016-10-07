@@ -9,11 +9,7 @@ class WRThumbnail extends React.Component {
     constructor(props){
         super(props)
         this.onWrClick=this.onWrClick.bind(this)
-
-
-
-        // this.set.setCurrentVid() = this.setCurrentVid().bind(this)
-        // debugger
+        this.thumbnailUrl = this.thumbnailUrl.bind(this)
     }
 
     onWrClick(){
@@ -21,15 +17,25 @@ class WRThumbnail extends React.Component {
         // this.props.actions.setCurrentRun(run)
     }
 
-    youtubeThumbnailUrl(url){
-      return `http://img.youtube.com/vi/${url.substr(32,20)}/1.jpg`
+    thumbnailUrl(run){
+
+        if (run.run_url.includes("youtube")) {
+            const endpoint = 'http://img.youtube.com/vi/' + run.run_url.split('=')[1] + '/1.jpg'
+            return endpoint 
+        }
+        else {
+            const endpoint = this.props.gameArt
+            return endpoint
+         }
     }
 
+
     render(){
+  
         return(
             <div className="pull-right">
                 <div>
-                      <Link to={`/runs/${this.props.run.id}`} onClick={this.onWrClick}><img src={this.youtubeThumbnailUrl(this.props.run["run_url"])} role="presentation"/></Link>
+                      <Link to={`/runs/${this.props.run.id}`} onClick={this.onWrClick}><img src={this.thumbnailUrl(this.props.run)} role="presentation" height="100" width="180"  style={{marginBottom: "20px"}}/></Link>
                 </div>
             </div>
         )
