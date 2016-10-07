@@ -35,7 +35,9 @@ class SideBar extends React.Component {
                 width="180"
                 frameborder="0"
                 scrolling="no"
+                muted="true"
                 allowfullscreen="true">
+
               </iframe>
              </div>
              <div id="twitch-2">
@@ -45,6 +47,7 @@ class SideBar extends React.Component {
               width="180"
               frameborder="0"
               scrolling="no"
+              muted="true"
               allowfullscreen="true">
             </iframe>
              </div>
