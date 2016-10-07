@@ -52,6 +52,7 @@ export function fetchTwitchStreams(run){
   }).then(streamsPayload =>{
     return streamsPayload
   })
+
   return {
     type: 'FETCH_CURRENT_STREAMS',
     payload: liveStreams

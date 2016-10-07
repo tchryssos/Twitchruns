@@ -11,12 +11,13 @@ class RunStream extends React.Component{
 
   constructor(props){
     super(props)
+
     this.state = {videos: this.props.run }
   }
 
   render(){
     return(
-      <div>
+      <div style={{backgroundImage: "url(" + this.props.run.game.artwork_url+ ")"}}>
         <SelectedStream run={this.props.run}/>
         <SideBar wrVideos={this.props.run.category_leaderboard.placement_list}/>
       </div>
