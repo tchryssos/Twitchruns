@@ -9,6 +9,7 @@ var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeMod
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
 
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 var publicPath = '/';
@@ -32,6 +33,7 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   entry: [
+    'babel-polyfill',
     // Include an alternative client for WebpackDevServer. A client's job is to
     // connect to WebpackDevServer by a socket and get notified about changes.
     // When you save a file, the client will either apply hot updates (in case
@@ -81,7 +83,7 @@ module.exports = {
       'react-native': 'react-native-web'
     }
   },
-  
+
   module: {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
@@ -99,7 +101,7 @@ module.exports = {
         include: paths.appSrc,
         loader: 'babel',
         query: {
-          
+
           // This is a feature of `babel-loader` for webpack (not Babel itself).
           // It enables caching results in ./node_modules/.cache/react-scripts/
           // directory for faster rebuilds. We use findCacheDir() because of:
@@ -146,7 +148,7 @@ module.exports = {
       }
     ]
   },
-  
+
   // We use PostCSS for autoprefixing only.
   postcss: function() {
     return [
