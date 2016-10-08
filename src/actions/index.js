@@ -17,7 +17,6 @@ export function fetchRuns(){
   const runs = fetch(`${apiBaseLink}/runs`).then(response => {
     return response.json()
   }).then(runnersPayload => {
-    debugger
     return runnersPayload
   })
 
