@@ -33,7 +33,7 @@ class WRThumbnail extends React.Component {
         return(
             <div className="pull-right">
                 <div>
-                      <Link to={`/runs/${this.props.run.id}`}><img src={this.youtubeThumbnailUrl(this.props.run["run_url"])} role="presentation"/></Link>
+                      <Link to={`/runs/${this.props.run.id}`}><img src={this.thumbnailUrl(this.props.run)} role="presentation" height="100" width="180"  style={{marginBottom: "20px"}}/></Link>
                 </div>
             </div>
         )
