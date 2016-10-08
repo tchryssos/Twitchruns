@@ -40,10 +40,10 @@ function mapStateToProps(state, ownProps) {
     stream2="none"
   }
 
-  if (state.runs.length > 0){
-  run = state.runs.find((run) => {return run.id == ownProps.params.id})
+  if (state.runs.original){
+  run = state.runs.original.find((run) => {return run.id == ownProps.params.id})
 
-  runner = state.runners.find((runner)=> {return runner.id == run.runner_id})
+  // runner = state.runners.find((runner)=> {return runner.id == run.runner_id})
   }
   else{
     runner="none"
@@ -79,7 +79,7 @@ function mapStateToProps(state, ownProps) {
           }
         }}
   }
-  return {run: run, runner: runner, stream1: stream1, stream2:stream2}
+  return {run: run, stream1: stream1, stream2:stream2}
 }
 function mapDispatchToProps(dispatch){
    return {actions: bindActionCreators(actions, dispatch)}

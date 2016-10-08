@@ -22,7 +22,7 @@ class SideBar extends React.Component {
 
 
      twitchStreamEmbeds(){
-       if (this.props.stream1 != "none"){
+       if (this.props.stream1 !== "none"){
          const twitchBaseUrl1=`http://player.twitch.tv/?channel=${this.props.stream1["channel"]["name"]}`
          const twitchBaseUrl2=`http://player.twitch.tv/?channel=${this.props.stream2["channel"]["name"]}`
 

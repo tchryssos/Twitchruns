@@ -9,17 +9,17 @@ import routes from './routes';
 import { Provider } from 'react-redux';
 
 import { createStore, applyMiddleware } from 'redux';
-import ReduxPromise from 'redux-promise'
-import {rootReducer, enhancer} from './reducers';
+import ReduxPromise from 'redux-promise';
+import rootReducer from './reducers';
 
-import {fetchRunners, fetchRuns, fetchTwitchStreams} from './actions'
+import { fetchRuns, fetchTwitchStreams} from './actions'
 import 'babel-polyfill';
 import 'babel-core/register'
 
-const store = createStore(rootReducer, {}, enhancer)
+const store = createStore(rootReducer, applyMiddleware(ReduxPromise))
 
 store.dispatch(fetchRuns())
-store.dispatch(fetchRunners())
+// store.dispatch(fetchRunners())
 // store.dispatch(fetchTwitchStreams())
 
 ReactDOM.render(
