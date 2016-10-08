@@ -68,8 +68,8 @@ import {Link} from 'react-router'
 }
 
 function mapStateToProps(state, ownProps) {
-  if (state.runs.length > 0){
-    return {videoList: state.runs}}
+  if (state.runs.original){
+    return {videoList: state.runs.filtered}}
   else{
     return {videoList: [{
               speedrun_id: "",

@@ -4,12 +4,12 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 class TwitchThumbnail extends React.Component {
-    
-    constructor(props){
-        super(props) 
-        // this.set.setCurrentVid() = this.setCurrentVid().bind(this)
-        // debugger
-    }
+
+    // constructor(props){
+    //     super(props)
+    //     // this.set.setCurrentVid() = this.setCurrentVid().bind(this)
+    //     // debugger
+    // }
 
     setCurrentVid(url){
         this.props.actions.setCurrentVid(url)
@@ -25,7 +25,7 @@ class TwitchThumbnail extends React.Component {
                 </div>
             </div>
         )
-    }  
+    }
 }
 
 function mapDispatchToProps(dispatch){
