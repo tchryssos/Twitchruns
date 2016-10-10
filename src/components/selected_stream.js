@@ -31,7 +31,7 @@ export default function SelectedStream(props){
 
 
       </div>
-    </div>
+    </div> 
   )
 }
 

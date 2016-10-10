@@ -2,12 +2,18 @@ import React from 'react'
 import WRThumbnail from './wr_thumbnail'
 import TwitchThumbnail from './twitch_thumbnail'
 import {connect} from 'react-redux'
+import {browserHistory} from 'react-router'
 
 class SideBar extends React.Component {
     constructor(props){
         super(props)
         this.wrInAppLinks=this.wrInAppLinks.bind(this)
         this.twitchStreamEmbeds=this.twitchStreamEmbeds.bind(this)
+        this.selectedTwitchStream=this.selectedTwitchStream.bind(this)
+    }
+
+    selectedTwitchStream(stream){
+      browserHistory.push("/stream")
     }
 
      wrInAppLinks(){
@@ -39,6 +45,7 @@ class SideBar extends React.Component {
                 allowfullscreen="true">
 
               </iframe>
+              <button onClick={()=>{this.selectedTwitchStream(this.props.stream1)}}>Watch this Stream</button>
              </div>
              <div id="twitch-2">
              <iframe
@@ -50,6 +57,7 @@ class SideBar extends React.Component {
               muted="true"
               allowfullscreen="true">
             </iframe>
+              <button onClick={()=>{this.selectedTwitchStream(this.props.stream2)}}>Watch this Stream</button>
              </div>
            </div>
          )
@@ -72,6 +80,7 @@ class SideBar extends React.Component {
 }
 
 function mapStateToProps(state, ownProps){
+  debugger
   if (state.streams.length >0){
     let stream1=state.streams[0]
     let stream2=state.streams[1]

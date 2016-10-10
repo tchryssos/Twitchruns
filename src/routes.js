@@ -6,6 +6,7 @@ import RunStream from './components/run_stream'
 
 export default (
   <Route path="/" component={App} >
-  <Route path='/runs/:id' component={RunStream}/>
+  <Route path='/stream' component={RunStream}/>
+  <Route path='runs/:id' component={RunStream}/>
   </Route>
 )
