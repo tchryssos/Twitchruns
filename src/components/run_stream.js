@@ -10,7 +10,6 @@ import SelectedStream from './selected_stream'
 class RunStream extends React.Component{
 
   constructor(props){
-    debugger
     super(props)
     this.state = {videos: this.props.run }
   }
