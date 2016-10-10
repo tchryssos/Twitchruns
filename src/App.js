@@ -14,7 +14,12 @@ class App extends Component {
       <div className="App">
         < NavBar/>
         < NewCarousel />
+        <div>
+        {this.props.children}
+        </div>
       </div>
+
+
     );
   }
 }

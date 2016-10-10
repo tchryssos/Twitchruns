@@ -32,6 +32,7 @@ function NewCarousel (props) {
                 trophy ='3rd Place'
                 bg = 'brown'
             }
+    
     return (<figure key={run.id}>
               <figcaption style={{backgroundColor: bg}} className='row'>{run.run_placement.category} </figcaption>
               <Link to={`/runs/${run.id}`}><img height='100px' width='220px' src={GetThumbnail(run)} /></Link>
@@ -42,19 +43,9 @@ function NewCarousel (props) {
   })
 
 
-        const SliderStyle = () => {
-        if (index === 2) { 'position: absolute; width: 80%; margin: 4px 10% 0 10%;'
-        } else {
-            assign(self.getDecoratorStyles(Decorator.position), Decorator.style || {})
-        } 
-        }
-
-
-
-return( <Carousel slidesToShow={5} cellSpacing={100} easing="easeInQuad" slidesToScroll={4} dragging={true}  cellAlign={'center'}>
+return( <Carousel slidesToShow={5} cellSpacing={100} easing="easeInQuad" slidesToScroll={4} dragging={true}  cellAlign={'center'} >
 {FeaturedVideoList}
 </Carousel>)
-
 }
 
 function mapStateToProps(state, ownProps) {
