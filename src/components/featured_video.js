@@ -16,17 +16,13 @@ class FeaturedVideo extends React.Component {
         <img src={this.props.picUrl} />
        </div>
        </Link>
-
-   )
-
+    )
   }
 }
-
 
 function mapDispatchToProps(dispatch) {
   return {actions: bindActionCreators(actions, dispatch)}
 }
-
 
 const componentCreator = connect(null, mapDispatchToProps)
 export default componentCreator(FeaturedVideo);
