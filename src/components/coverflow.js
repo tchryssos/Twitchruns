@@ -17,7 +17,7 @@ export default function RunCarousel(){
     width={960}
     height={480}
     displayQuantityOfSide={2}
-    navigation={false}
+    navigation={true}
     enableHeading={false}
     >
     <img src='[image/path/please_change]' alt='title or description' data-action={fn} />
