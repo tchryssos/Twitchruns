@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import Carousel from 'nuka-carousel'
+import Spinner from 'react-spin'
 
 function NewCarousel (props) {
 
@@ -40,13 +41,18 @@ function NewCarousel (props) {
               </figcaption>
             </figure>
             )
-  })
+        })
 
+        if (props.videoList[1]){ 
+            return(<Carousel slidesToShow={5} cellSpacing={70} easing="easeInQuad" slidesToScroll={4} dragging={true}  cellAlign={'left'} >
+                {FeaturedVideoList}
+                </Carousel>)        
+        }
+        else {
+            return (<Spinner />) 
+        }
+    }
 
-return( <Carousel slidesToShow={5} cellSpacing={100} easing="easeInQuad" slidesToScroll={4} dragging={true}  cellAlign={'center'} >
-{FeaturedVideoList}
-</Carousel>)
-}
 
 function mapStateToProps(state, ownProps) {
   if (state.runs.original){
@@ -93,39 +99,4 @@ place: 1
       }
 }
 const componentCreator = connect(mapStateToProps)
-export default componentCreator(NewCarousel);
-
-   
-    // getThumbnails(run){
-    //     var runThumbnail = ""
-    //     if (run.run_url.includes("youtube")) {
-    //         runThumbnail = '<img src="http://img.youtube.com/vi/' + run.run_url.split('=')[1] + '/1.jpg"/>';
-    //          }
-    //     else {
-    //         runThumbnail = "'<img src=" + run.game.artwork_url + "/>'"
-    //     }
-    //     // this.allrunThumbnailsForCarouselWrapper(runThumbnail)
-    // }
-
-    // allrunThumbnailsForCarouselWrapper(taggedImgUrl){
-    //     this.setState.carouselPics.push(taggedImgUrl)
-    // }
-
-    // carouselWrapper(){
-    //     debugger
-    //     this.state.carouselPics
-    // }
-
-    // sample carousel object
-        // <figure>
-        //     <img src="http://www.mobygames.com/images/covers/l/216304-super-mario-64-nintendo-64-front-cover.jpg" height="100px" width="180px" />
-        //     <figcaption> ecezalp </figcaption>
-        // </figure>
-
-   
-           
-//             // carousel tags that 
-//         )
-//     }
-// }
-
+export default componentCreator(NewCarousel)
