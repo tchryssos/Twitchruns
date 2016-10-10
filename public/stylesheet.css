@@ -18,7 +18,9 @@ figcaption {
    margin: 57px !important;
 }
 
-
+.left-side-div {
+    width: 300px !important;
+}
 
 .slider-decorator-1{
     right: 60px !important;
@@ -30,6 +32,15 @@ h1 {
 
 h2 {
     font-family: "Arial", Gadget, sans-serif;
+}
+
+h3 {
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h5 {
+    font-family: "Arial", Gadget, sans-serif;
+    text-align: left;
 }
 
 .title-div {
@@ -45,5 +56,9 @@ h2 {
 .twitch-2 {
     padding-right: 65px;
     padding-bottom: 10px;
+}
+
+.red {
+    color: red
 }
 
