@@ -44,7 +44,7 @@ function NewCarousel (props) {
         })
 
         if (props.videoList[1]){ 
-            return(<Carousel slidesToShow={5} cellSpacing={70} easing="easeInQuad" slidesToScroll={4} dragging={true}  cellAlign={'left'} >
+            return(<Carousel slidesToShow={5} cellSpacing={70} easing="easeInQuad" slidesToScroll={4} dragging={true} cellAlign={'left'} >
                 {FeaturedVideoList}
                 </Carousel>)        
         }
