@@ -34,6 +34,7 @@ h2 {
 
 .title-div {
     float: 'left' !important;
+     text-align: 'left' !important;
 }
 
 .twitch-1 {
@@ -45,3 +46,4 @@ h2 {
     padding-right: 65px;
     padding-bottom: 10px;
 }
+
