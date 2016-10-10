@@ -41,6 +41,16 @@ function NewCarousel (props) {
             )
   })
 
+
+        const SliderStyle = () => {
+        if (index === 2) { 'position: absolute; width: 80%; margin: 4px 10% 0 10%;'
+        } else {
+            assign(self.getDecoratorStyles(Decorator.position), Decorator.style || {})
+        } 
+        }
+
+
+
 return( <Carousel slidesToShow={5} cellSpacing={100} easing="easeInQuad" slidesToScroll={4} dragging={true}  cellAlign={'center'}>
 {FeaturedVideoList}
 </Carousel>)
