@@ -2,18 +2,22 @@ import React from 'react'
 
 export default function SelectedStream(props){
   let videoUrl = ''
-  if (props.run.run_url.includes('youtube')){
-    const videoUrlArray = props.run.run_url.split('=')
+  if (props.runUrl.includes('youtube')){
+    const videoUrlArray = props.runUrl.split('=')
     videoUrl = 'https://www.youtube.com/embed/' + videoUrlArray[1] +'?autoplay=1'
     var videoEmbed =   <iframe width="600" height="450" src={videoUrl} allowFullScreen>
             </iframe>
-  }else if(props.run.run_url.includes('twitch')) {
-    var videoArray = props.run.run_url.split('/')
+  }else if(props.runUrl.includes('channel')) {
+      var videoEmbed =   <iframe width="600" height="450" src={props.runUrl} allowFullScreen>
+            </iframe>
+  }else if(props.runUrl.includes('twitch')) {
+    var videoArray = props.runUrl.split('/')
     var videoId = videoArray[videoArray.length - 1]
     var twitchUrl = 'https://player.twitch.tv/?video=v' + videoId
     var videoEmbed =   <iframe width="600" height="450" src={twitchUrl} allowFullScreen>
             </iframe>
   }
+  debugger
   return(
     <div className='col-md-8' >
       <div className='col-md-3' style={{float: 'left', padding:'80px 10px 80px 40px'}}>
@@ -28,7 +32,7 @@ export default function SelectedStream(props){
       {videoEmbed}
       </div>
       </div>
-    </div>
+    </div> 
   )
 }
 
