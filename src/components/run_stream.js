@@ -18,7 +18,10 @@ class RunStream extends React.Component{
     this.setState({videoUrl: newStream})
   }
 
-  newVideo(run){
+  setVideo(){
+    if(!this.state.videoUrl.includes('channel')){
+      this.setState({videoUrl: this.props.run.run_url})
+    }
   }
 
 
