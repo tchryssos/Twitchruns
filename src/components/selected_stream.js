@@ -27,13 +27,10 @@ export default function SelectedStream(props){
         </ul>
       </div>
       <div className='col-md-6 col-md-offset-2' style={{padding:'50px 30px'}}>
-      <div className='row'>
-      <h3 style={{float: 'left', padding: '0px 0px 5px 15px'}}>{props.run.run_placement.name}: {props.run.run_placement.category}</h3>
-      <h3 style={{float: 'right',padding: '0px 0px 5px 0px' }}>Rank: {props.run.place}</h3>
-      </div>
+      <div className='title-div'>
+        <h1>{props.run.run_placement.name}</h1> <h2> {props.run.run_placement.category}        Rank: {props.run.place}</h2>
       {videoEmbed}
-
-
+      </div>
       </div>
     </div> 
   )
