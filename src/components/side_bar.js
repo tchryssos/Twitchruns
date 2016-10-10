@@ -1,6 +1,5 @@
 import React from 'react'
 import WRThumbnail from './wr_thumbnail'
-// import TwitchThumbnail from './twitch_thumbnail'
 import {connect} from 'react-redux'
 import {browserHistory} from 'react-router'
 
