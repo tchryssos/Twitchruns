@@ -6,29 +6,20 @@ import {connect} from 'react-redux'
 class SideBar extends React.Component {
     constructor(props){
         super(props)
-        this.wrInAppLinks=this.wrInAppLinks.bind(this)
-        this.twitchStreamEmbeds=this.twitchStreamEmbeds.bind(this)
+        this.inAppLinks=this.inAppLinks.bind(this)
     }
 
-     wrInAppLinks(){
-       return (
-        <div>
-          <div className="row"><WRThumbnail run={this.props.wrVideos[1]} gameArt={this.props.gameArt}/></div>
-          <div className="row"><WRThumbnail run={this.props.wrVideos[2]} gameArt={this.props.gameArt}/></div>
-          <div className="row"><WRThumbnail run={this.props.wrVideos[3]}gameArt={this.props.gameArt}/></div>
-        </div>
-       )
-     }
-
-
-     twitchStreamEmbeds(){
-       if (this.props.stream1 !== "none"){
+     inAppLinks(){
+        if (this.props.stream1 !== "none"){
          const twitchBaseUrl1=`http://player.twitch.tv/?channel=${this.props.stream1["channel"]["name"]}`
          const twitchBaseUrl2=`http://player.twitch.tv/?channel=${this.props.stream2["channel"]["name"]}`
 
-         return(
-           <div>
-             <div id="twitch-1">
+         return (
+          <div>
+          <div className="row"><WRThumbnail run={this.props.wrVideos[1]} gameArt={this.props.gameArt}/></div>
+          <div className="row"><WRThumbnail run={this.props.wrVideos[2]} gameArt={this.props.gameArt}/></div>
+          <div className="row"><WRThumbnail run={this.props.wrVideos[3]} gameArt={this.props.gameArt}/></div>
+          <div className="twitch-1">
                <iframe
                 src={twitchBaseUrl1}
                 height="101"
@@ -36,11 +27,12 @@ class SideBar extends React.Component {
                 frameborder="0"
                 scrolling="no"
                 muted="true"
-                allowfullscreen="true">
-
+                allowfullscreen="true"
+               >
               </iframe>
              </div>
-             <div id="twitch-2">
+
+             <div className="twitch-2">
              <iframe
               src={twitchBaseUrl2}
               height="101"
@@ -48,24 +40,30 @@ class SideBar extends React.Component {
               frameborder="0"
               scrolling="no"
               muted="true"
-              allowfullscreen="true">
+              allowfullscreen="true"
+              >
             </iframe>
-             </div>
-           </div>
-         )
-       } else {
+            </div>
+            </div>
+        )
+      }
+
+      else {
          return (
            <div>
-             <h1>NO STREAMS YET</h1>
+            <div className="row"><WRThumbnail run={this.props.wrVideos[1]} gameArt={this.props.gameArt}/></div>
+              <div className="row"><WRThumbnail run={this.props.wrVideos[2]} gameArt={this.props.gameArt}/></div>
+              <div className="row"><WRThumbnail run={this.props.wrVideos[3]} gameArt={this.props.gameArt}/></div>
+              <h2>NO ACTIVE STREAMS</h2>
            </div>
          )
        }
      }
+
     render(){
         return (
             <div className='pull-right' style={{padding: '180px 30px 4cm 0px'}}>
-                {this.wrInAppLinks()}
-                {this.twitchStreamEmbeds()}
+                {this.inAppLinks()}
             </div>
         )
     }
