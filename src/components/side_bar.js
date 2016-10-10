@@ -1,6 +1,6 @@
 import React from 'react'
 import WRThumbnail from './wr_thumbnail'
-import TwitchThumbnail from './twitch_thumbnail'
+// import TwitchThumbnail from './twitch_thumbnail'
 import {connect} from 'react-redux'
 import {browserHistory} from 'react-router'
 
@@ -19,9 +19,9 @@ class SideBar extends React.Component {
      wrInAppLinks(){
        return (
         <div>
-          <div className="row"><WRThumbnail run={this.props.wrVideos[1]} gameArt={this.props.gameArt}/></div>
-          <div className="row"><WRThumbnail run={this.props.wrVideos[2]} gameArt={this.props.gameArt}/></div>
-          <div className="row"><WRThumbnail run={this.props.wrVideos[3]}gameArt={this.props.gameArt}/></div>
+          <div className="row"><WRThumbnail stream={this.props.stream}  run={this.props.wrVideos[1]} gameArt={this.props.gameArt}/></div>
+          <div className="row"><WRThumbnail stream={this.props.stream} run={this.props.wrVideos[2]} gameArt={this.props.gameArt} /></div>
+          <div className="row"><WRThumbnail stream={this.props.stream} run={this.props.wrVideos[3]} gameArt={this.props.gameArt} /></div>
         </div>
        )
      }
@@ -34,7 +34,7 @@ class SideBar extends React.Component {
 
          return(
            <div>
-             <div id="twitch-1">
+             <div id="twitch-1" >
                <iframe
                 src={twitchBaseUrl1}
                 height="101"
@@ -43,23 +43,30 @@ class SideBar extends React.Component {
                 scrolling="no"
                 muted="true"
                 allowfullscreen="true">
-
               </iframe>
-              <button onClick={()=>{this.selectedTwitchStream(this.props.stream1)}}>Watch this Stream</button>
+              <div className='row' >
+                <button className='btn btn-danger btn-xs' onClick={()=>{this.props.stream(twitchBaseUrl1)}} >
+                  Watch
+                </button>
+              </div>
              </div>
-             <div id="twitch-2">
-             <iframe
-              src={twitchBaseUrl2}
-              height="101"
-              width="180"
-              frameborder="0"
-              scrolling="no"
-              muted="true"
-              allowfullscreen="true">
-            </iframe>
-              <button onClick={()=>{this.selectedTwitchStream(this.props.stream2)}}>Watch this Stream</button>
-             </div>
+             <div id="twitch-2" >
+               <iframe
+                src={twitchBaseUrl2}
+                height="101"
+                width="180"
+                frameborder="0"
+                scrolling="no"
+                muted="true"
+                allowfullscreen="true">
+              </iframe>
+              <div className='row' >
+                <button className='btn btn-danger btn-xs' onClick={()=>{this.props.stream(twitchBaseUrl2)}} >
+                  Watch
+                </button>
+              </div>
            </div>
+          </div>
          )
        } else {
          return (

@@ -11,15 +11,24 @@ class RunStream extends React.Component{
 
   constructor(props){
     super(props)
-    debugger
+    this.state = {video: this.props.run, videoUrl: this.props.run.run_url }
   }
+
+  showStream(newStream){
+    this.setState({videoUrl: newStream})
+  }
+
+  newVideo(run){
+  }
+
+
 
   render(){
     this.props.actions.fetchTwitchStreams(this.props.run)
     return(
-      <div style={{backgroundImage: "url(" + this.props.run.game.artwork_url+ ")"}}>
-        <SelectedStream run={this.props.run}/>
-        <SideBar wrVideos={this.props.run.category_leaderboard.placement_list} gameArt={this.props.run.game.artwork_url}/>
+      <div>
+        <SelectedStream run={this.props.run} runUrl={this.state.videoUrl}/>
+        <SideBar stream={this.showStream.bind(this)} wrVideos={this.props.run.category_leaderboard.placement_list} gameArt={this.props.run.game.artwork_url}/>
       </div>
     )
   }
@@ -72,9 +81,10 @@ function mapStateToProps(state, ownProps) {
             title: "120 Star",
             rules: "Complete the game while collecting every star. No restrictions. All forms of BLJ are allowed. Timing starts from reset and ends when the big star is collected at the end of the game.",
             placement_list: {
-              1: "8m73rgwy",
-              2: "1zqjp35m",
-              3: "3",
+
+              1: {id: 1},
+              2: {id: 2},
+              3: {id: 3},
             }
           }
         }}
