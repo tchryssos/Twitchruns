@@ -9,7 +9,6 @@ class WRThumbnail extends React.Component {
     // constructor(props){
     //     super(props)
     //     // this.set.setCurrentVid() = this.setCurrentVid().bind(this)
-    //     // debugger
     // }
 
     youtubeThumbnailUrl(url){

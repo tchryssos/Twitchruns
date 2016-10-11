@@ -67,7 +67,6 @@ class SideBar extends React.Component {
 }
 
 function mapStateToProps(state, ownProps){
-  debugger
   if (state.streams.length >0){
     let stream1=state.streams[0]
     let stream2=state.streams[1]
