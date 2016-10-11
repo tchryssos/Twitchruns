@@ -29,7 +29,6 @@
     "filesize": "3.3.0",
     "fs-extra": "0.30.0",
     "gzip-size": "3.0.0",
-    "html-webpack-plugin": "2.22.0",
     "http-proxy-middleware": "0.17.1",
     "jest": "15.1.1",
     "json-loader": "0.5.4",
@@ -63,6 +62,7 @@
     "detect-port": "1.0.0",
     "react-dev-utils": "^0.2.1",
     "autoprefixer": "6.4.1",
+    "html-webpack-plugin": "2.22.0",
     "find-cache-dir": "0.1.1"
   },
   "scripts": {
