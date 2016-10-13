@@ -4,11 +4,11 @@ import {Link} from 'react-router'
 
 export default function NavBar(props){
   return (
-    <nav className='navbar navbar-inverse'>
-      <div style={{float: 'left'}}>
-        <h3><Link to='/'>Browse Twitch Runs</Link></h3>
-      </div>
-      <SearchBar/>
-    </nav>
+    <div>
+      <nav className='navbar'>
+        <Link to='/'><img src="http://i.imgur.com/c2EDVTb.png" width="400px"/></Link>
+        <SearchBar/>
+      </nav>
+    </div>
   )
 }
