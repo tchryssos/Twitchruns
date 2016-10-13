@@ -17,6 +17,7 @@ class SideBar extends React.Component {
         return(
           <div>
             <div id="twitch-1" >
+
               <iframe
                 src={twitchBaseUrl1}
                 height="101"
@@ -25,12 +26,14 @@ class SideBar extends React.Component {
                 scrolling="no"
                 muted="true">
               </iframe>
+
               <div className='row' >
                 <button className='btn btn-danger btn-xs' onClick={()=>{this.props.stream(twitchBaseUrl1)}} >Watch</button>
               </div>
             </div>
 
             <div id="twitch-2" >
+
               <iframe
                 src={twitchBaseUrl2}
                 height="101"
@@ -40,6 +43,7 @@ class SideBar extends React.Component {
                 muted="true"
                 allowfullscreen="true">
               </iframe>
+
               <div className='row' >
                 <button className='btn btn-danger btn-xs' onClick={()=>{this.props.stream(twitchBaseUrl2)}} >Watch</button>
               </div>
@@ -76,11 +80,10 @@ function mapStateToProps(state, ownProps){
     let stream2=state.streams[1]
 
     return {stream1: stream1, stream2: stream2}
-  } else {
+  }else {
     return {stream1: "none", stream2: "none"}
   }
 }
 
  const componentCreator = connect(mapStateToProps)
  export default componentCreator(SideBar)
-// {this.props.wrVideos.map((video, i) => <WRThumbnail video={video} key={i}/>) }

@@ -5,9 +5,6 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 class SearchBar extends React.Component{
-  // constructor(props){
-  //   super(props)
-  // }
 
   searchRuns(){
     this.props.actions.filterRuns(this.refs.searchTerm.value)

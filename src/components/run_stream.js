@@ -24,8 +24,6 @@ class RunStream extends React.Component{
     }
   }
 
-
-
   render(){
     this.props.actions.fetchTwitchStreams(this.props.run)
     return(
@@ -41,11 +39,10 @@ function mapStateToProps(state, ownProps) {
   let stream1=null
   let stream2=null
   let run=null
-  let runner=null
 
   if (state.streams.length >0){
-    let stream1=state.streams[0]
-    let stream2=state.streams[1]
+    stream1=state.streams[0]
+    stream2=state.streams[1]
 
   } else {
     stream1="none"
@@ -54,11 +51,8 @@ function mapStateToProps(state, ownProps) {
 
   if (state.runs.original){
   run = state.runs.original.find((run) => {return run.id == ownProps.params.id})
-
-  // runner = state.runners.find((runner)=> {return runner.id == run.runner_id})
   }
   else{
-    runner="none"
     run=
       {run: {
         speedrun_id: "",

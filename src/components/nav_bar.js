@@ -6,7 +6,7 @@ export default function NavBar(props){
   return (
     <div>
       <nav className='navbar'>
-        <Link to='/'><img src="http://i.imgur.com/c2EDVTb.png" width="400px"/></Link>
+        <Link to='/'><img src="http://i.imgur.com/c2EDVTb.png" width="400px" role='presentation'/></Link>
         <SearchBar/>
       </nav>
     </div>

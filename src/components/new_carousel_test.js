@@ -36,9 +36,16 @@ function NewCarousel (props) {
             }
 
     return (<figure key={run.id}>
-              <figcaption style={{backgroundColor: bg}} className='row'>{run.run_placement.category} </figcaption>
-              <Link to={`/runs/${run.id}`}><img height='100px' src={GetThumbnail(run)} /></Link>
-              <figcaption className='row' style={{backgroundColor: bg} }>{trophy}
+              <figcaption style={{backgroundColor: bg}} className='row'>
+                {run.run_placement.category}
+              </figcaption>
+
+              <Link to={`/runs/${run.id}`}>
+                <img height='100px' src={GetThumbnail(run)} role='presentation' />
+              </Link>
+
+              <figcaption className='row' style={{backgroundColor: bg} }>
+                {trophy}
               </figcaption>
             </figure>
             )
@@ -47,10 +54,14 @@ function NewCarousel (props) {
         if (props.videoList[1]){
             return(
               <div className='container' >
-              <Carousel slidesToShow={6} cellSpacing={20} easing="easeInQuad" slidesToScroll={5} dragging={true} cellAlign={'left'} >
-                {FeaturedVideoList}
+                <Carousel slidesToShow={6} cellSpacing={20} easing="easeInQuad" slidesToScroll={5} dragging={true} cellAlign={'left'} >
+                  {FeaturedVideoList}
                 </Carousel>
-                <div className='row'><h3>Select a speedrun from above or filter by game, category, or runner! <br/> Click the Twitchruns console to return to the browser at any point. </h3></div>
+
+                <div className='row'>
+                  <h3>Select a speedrun from above or search by game, category, or runner!</h3>
+                </div>
+
               </div>)
         }
         else {
