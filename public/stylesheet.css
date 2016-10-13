@@ -62,3 +62,8 @@ h5 {
     color: red
 }
 
+.search-bar {
+  position: absolute;
+  top: 12%;
+  right: 5%
+}
