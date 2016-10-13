@@ -50,7 +50,7 @@ function NewCarousel (props) {
               <Carousel slidesToShow={6} cellSpacing={20} easing="easeInQuad" slidesToScroll={5} dragging={true} cellAlign={'left'} >
                 {FeaturedVideoList}
                 </Carousel>
-                <div className='row'><h3>Select a speedrun from above or filter by game, category, or runner!</h3></div>
+                <div className='row'><h3>Select a speedrun from above or filter by game, category, or runner! <br/> Click the Twitchruns console to return to the browser at any point. </h3></div>
               </div>)
         }
         else {
