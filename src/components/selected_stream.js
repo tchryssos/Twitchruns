@@ -42,7 +42,7 @@ export default function SelectedStream(props){
         <h5><span className="red">Rules: </span> {props.run.category_leaderboard.rules}</h5>
         {otherPlacedRuns()}
         <h5><span className="red">Game Art:</span></h5>
-        <img src={props.run.game.artwork_url} height="100px" width="180px" role='presentation'/>
+        <img src={props.run.game.artwork_url} width="180px" role='presentation'/>
       </div>
 
       <div className='col-md-6 col-md-offset-1' style={{padding:'50px 30px'}}>
