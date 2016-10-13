@@ -65,4 +65,10 @@ h5 {
 .red-rank {
     color: red;
     position: relative
+  }
+
+.search-bar {
+  position: absolute;
+  top: 12%;
+  right: 5%
 }
