@@ -29,7 +29,7 @@ class RunStream extends React.Component{
   render(){
     this.props.actions.fetchTwitchStreams(this.props.run)
     return(
-      <div>
+      <div className="run-stream">
         <SelectedStream run={this.props.run} runUrl={this.state.videoUrl}/>
         <SideBar stream={this.showStream.bind(this)} wrVideos={this.props.run.category_leaderboard.placement_list} gameArt={this.props.run.game.artwork_url}/>
       </div>
