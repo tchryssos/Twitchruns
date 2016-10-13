@@ -62,3 +62,7 @@ h5 {
     color: red
 }
 
+.red-rank {
+    color: red;
+    position: relative
+}
