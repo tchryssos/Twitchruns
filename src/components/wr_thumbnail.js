@@ -6,11 +6,6 @@ import {Link} from 'react-router'
 
 class WRThumbnail extends React.Component {
 
-    // constructor(props){
-    //     super(props)
-    //     // this.set.setCurrentVid() = this.setCurrentVid().bind(this)
-    //     // debugger
-    // }
 
     youtubeThumbnailUrl(url){
       return `http://img.youtube.com/vi/${url.substr(32,20)}/1.jpg`
@@ -29,11 +24,9 @@ class WRThumbnail extends React.Component {
 
 
     render(){
-
         return(
             <div className="pull-right">
                 <div>
-
                     <Link to={`/runs/${this.props.run.id}`}><img onClick={()=>{this.props.stream(this.props.run.run_url)}} src={this.thumbnailUrl(this.props.run)} role="presentation" height="100" width="180" style={{marginBottom: '20px', marginRight: '80px', marginLeft:"80px"}}/></Link>
                 </div>
             </div>

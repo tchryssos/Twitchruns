@@ -7,7 +7,7 @@ import Spinner from 'react-spin'
 function NewCarousel (props) {
 
     const GetThumbnail = (run) => {
-        var runThumbUrl = "" 
+        var runThumbUrl = ""
             if (run.run_url.includes("youtube")) {
                 runThumbUrl = 'http://img.youtube.com/vi/' + run.run_url.split('=')[1] + '/1.jpg'
             }
@@ -33,23 +33,29 @@ function NewCarousel (props) {
                 trophy ='3rd Place'
                 bg = 'brown'
             }
-    
-    return (<figure key={run.id}>
-              <figcaption style={{backgroundColor: bg}} className='row'>{run.run_placement.category} </figcaption>
-              <Link to={`/runs/${run.id}`}><img height='100px' width='220px' src={GetThumbnail(run)} /></Link>
-              <figcaption className='row' style={{backgroundColor: bg} }>{trophy}
-              </figcaption>
-            </figure>
-            )
+
+        return (<figure key={run.id}>
+                <figcaption style={{backgroundColor: bg}} className='row'>{run.run_placement.category} </figcaption>
+                <Link to={`/runs/${run.id}`}><img height='100px' width='220px' src={GetThumbnail(run)} /></Link>
+                <figcaption className='row' style={{backgroundColor: bg} }>{trophy}
+                </figcaption>
+              </figure>
+              )
         })
 
-        if (props.videoList[1]){ 
-            return(<Carousel slidesToShow={5} cellSpacing={70} easing="easeInQuad" slidesToScroll={4} dragging={true} cellAlign={'left'} >
-                {FeaturedVideoList}
-                </Carousel>)        
+        if (props.videoList[1]){
+            return(
+                <div className='container-fluid' >
+                <Carousel slidesToShow={5} cellSpacing={70} easing="easeInQuad" slidesToScroll={4} dragging={true} cellAlign={'left'} >
+                  {FeaturedVideoList}
+                </Carousel>
+                <div className='row'>
+                  <h3>Select a speedrun from the list</h3>
+                </div>
+                </div>)
         }
         else {
-            return (<Spinner />) 
+            return (<Spinner />)
         }
     }
 
