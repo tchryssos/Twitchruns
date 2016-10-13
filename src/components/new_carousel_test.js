@@ -7,20 +7,11 @@ import Spinner from 'react-spin'
 function NewCarousel (props) {
 
     const GetThumbnail = (run) => {
-
       if (run.thumbnail==="none"){
         return run.game.artwork_url
       } else {
         return run.thumbnail
       }
-        // var runThumbUrl = ""
-        //     if (run.run_url.includes("youtube")) {
-        //         runThumbUrl = 'http://img.youtube.com/vi/' + run.run_url.split('=')[1] + '/1.jpg'
-        //     }
-        //     else {
-        //         runThumbUrl = run.game.artwork_url
-        //     }
-        // return runThumbUrl
     }
 
    const FeaturedVideoList = props.videoList.map( (run, i) => {
@@ -35,9 +26,13 @@ function NewCarousel (props) {
                 trophy = '2nd Place'
                 bg = 'silver'
                 break;
-            default:
+            case 3:
                 trophy ='3rd Place'
                 bg = 'brown'
+                break;
+            default:
+                trophy ='Scrub'
+                bg = 'pink'
             }
 
     return (<figure key={run.id}>
@@ -50,9 +45,13 @@ function NewCarousel (props) {
         })
 
         if (props.videoList[1]){
-            return(<Carousel slidesToShow={6} cellSpacing={20} easing="easeInQuad" slidesToScroll={5} dragging={true} cellAlign={'left'} >
+            return(
+              <div className='container' >
+              <Carousel slidesToShow={6} cellSpacing={20} easing="easeInQuad" slidesToScroll={5} dragging={true} cellAlign={'left'} >
                 {FeaturedVideoList}
-                </Carousel>)
+                </Carousel>
+                <div className='row'><h3>Select a speedrun from above or search by game, category, or runner!</h3></div>
+              </div>)
         }
         else {
             return (<Spinner />)

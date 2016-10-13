@@ -13,15 +13,23 @@ class SearchBar extends React.Component{
     this.props.actions.filterRuns(this.refs.searchTerm.value)
   }
 
+  stopSearch(event){
+    event.preventDefault();
+  }
+
 
   render(){return (
     <div className="container search-bar">
         <div className="row">
             <div className="col-md-4 col-md-offset-3" style={{float: 'right'}}>
-                <form action="" className="search-form">
+                <form action="" className="search-form" onSubmit={(e)=> e.preventDefault()}>
                     <div className="form-group has-feedback">
                 		<label htmlFor="search" className="sr-only">Search</label>
+<<<<<<< HEAD
+                		<input type="text" className="form-control" name="search" ref='searchTerm'  onChange={()=>{this.searchRuns()}} id="search" placeholder="search"/>
+=======
                 		<input type="text" className="form-control" name="search" ref='searchTerm' onChange={()=>{this.searchRuns()}} id="search" placeholder="Filter runs by game, runner, category..."/>
+>>>>>>> 630d46a7bf635dda91098bdb38fdda7602944c86
                   		<span className="glyphicon glyphicon-search form-control-feedback"></span>
                 	</div>
                 </form>

@@ -1,7 +1,7 @@
 import React from 'react'
 import WRThumbnail from './wr_thumbnail'
 import {connect} from 'react-redux'
-import {browserHistory} from 'react-router'
+// import {browserHistory} from 'react-router'
 
 class SideBar extends React.Component {
     constructor(props){

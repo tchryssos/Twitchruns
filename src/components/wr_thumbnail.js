@@ -10,23 +10,7 @@ class WRThumbnail extends React.Component {
         super(props)
         // this.set.setCurrentVid() = this.setCurrentVid().bind(this)
         this.thumbnailUrl=this.thumbnailUrl.bind(this)
-
     }
-
-    // youtubeThumbnailUrl(url){
-    //   return `http://img.youtube.com/vi/${url.substr(32,20)}/1.jpg`
-    // }
-    //
-    // thumbnailUrl(run){
-    //     if (run.run_url.includes("youtube")) {
-    //         const endpoint = 'http://img.youtube.com/vi/' + run.run_url.split('=')[1] + '/1.jpg'
-    //         return endpoint
-    //     }
-    //     else {
-    //         const endpoint = this.props.gameArt
-    //         return endpoint
-    //      }
-    //     }
 
     thumbnailUrl(run){
       if (run.thumbnail === "none"){
@@ -38,11 +22,9 @@ class WRThumbnail extends React.Component {
 
 
     render(){
-
         return(
             <div className="pull-right">
                 <div>
-
                     <Link to={`/runs/${this.props.run.id}`}><img onClick={()=>{this.props.stream(this.props.run.run_url)}} src={this.thumbnailUrl(this.props.run)} role="presentation" width="180" style={{marginBottom: '20px', marginRight: '80px', marginLeft:"80px"}}/></Link>
                 </div>
             </div>
