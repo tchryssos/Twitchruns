@@ -1,17 +1,5 @@
 import {apiBaseLink} from "../constants"
 
-// export function fetchRunners(){
-//   const runners = fetch(`${apiBaseLink}/runners`).then(response => {
-//   return response.json()
-// }).then(runnersPayload => {
-//   return runnersPayload
-// })
-//
-// return {
-//   type: 'FETCH_RUNNERS',
-//   payload: runners
-// }
-// }
 
 export function fetchRuns(){
   const runs = fetch(`${apiBaseLink}/runs`).then(response => {
@@ -26,25 +14,13 @@ export function fetchRuns(){
   }
 }
 
-export function fetchLeaderboard(){
-  const leaderboard = fetch(`${apiBaseLink}/category_leaderboards`).then(response => {
-  return response.json()
-}).then(leadersPayload => {
-  return leadersPayload
-})
-
-return {
-  type: 'FETCH_CATEGORY_LEADERBOARDS',
-  payload: leaderboard
-}
-}
-
 export function filterRuns(term){
   return {
     type: 'FETCH_SEARCH',
     payload: term
   }
 }
+
 export function fetchTwitchStreams(run){
   const liveStreams=fetch(`${apiBaseLink}/streams`, {
     method: 'post',

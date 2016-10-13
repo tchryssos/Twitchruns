@@ -5,9 +5,6 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 class SearchBar extends React.Component{
-  // constructor(props){
-  //   super(props)
-  // }
 
   searchRuns(){
     this.props.actions.filterRuns(this.refs.searchTerm.value)
@@ -25,11 +22,7 @@ class SearchBar extends React.Component{
                 <form action="" className="search-form" onSubmit={(e)=> e.preventDefault()}>
                     <div className="form-group has-feedback">
                 		<label htmlFor="search" className="sr-only">Search</label>
-<<<<<<< HEAD
-                		<input type="text" className="form-control" name="search" ref='searchTerm'  onChange={()=>{this.searchRuns()}} id="search" placeholder="search"/>
-=======
                 		<input type="text" className="form-control" name="search" ref='searchTerm' onChange={()=>{this.searchRuns()}} id="search" placeholder="Filter runs by game, runner, category..."/>
->>>>>>> 630d46a7bf635dda91098bdb38fdda7602944c86
                   		<span className="glyphicon glyphicon-search form-control-feedback"></span>
                 	</div>
                 </form>
