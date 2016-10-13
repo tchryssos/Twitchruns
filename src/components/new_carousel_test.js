@@ -57,7 +57,7 @@ function NewCarousel (props) {
                 <Carousel slidesToShow={6} cellSpacing={20} easing="easeInQuad" slidesToScroll={5} dragging={true} cellAlign={'left'} >
                   {FeaturedVideoList}
                 </Carousel>
-                
+
                 <div className='row'>
                   <h3>Select a speedrun from above or search by game, category, or runner!</h3>
                 </div>
