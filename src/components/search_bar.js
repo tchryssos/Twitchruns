@@ -15,13 +15,13 @@ class SearchBar extends React.Component{
 
 
   render(){return (
-    <div className="container">
+    <div className="container search-bar">
         <div className="row">
             <div className="col-md-4 col-md-offset-3" style={{float: 'right'}}>
                 <form action="" className="search-form">
                     <div className="form-group has-feedback">
                 		<label htmlFor="search" className="sr-only">Search</label>
-                		<input type="text" className="form-control" name="search" ref='searchTerm' onChange={()=>{this.searchRuns()}} id="search" placeholder="search"/>
+                		<input type="text" className="form-control" name="search" ref='searchTerm' onChange={()=>{this.searchRuns()}} id="search" placeholder="Filter runs by game, runner, category..."/>
                   		<span className="glyphicon glyphicon-search form-control-feedback"></span>
                 	</div>
                 </form>
