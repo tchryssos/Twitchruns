@@ -59,11 +59,15 @@ class SideBar extends React.Component {
       }
     }
 
+
      render(){
       return (
       <div className='pull-right' style={{padding: '180px 30px 4cm 0px'}}>
+        <span className="red-rank" style={{float: 'center'}}> Rank 1 </span>
         <div className="row"><WRThumbnail stream={this.props.stream} run={this.props.wrVideos[1]} gameArt={this.props.gameArt}/></div>
+        <span className="red-rank" style={{float: 'center'}}> Rank 2 </span>
         <div className="row"><WRThumbnail stream={this.props.stream} run={this.props.wrVideos[2]} gameArt={this.props.gameArt}/></div>
+        <span className="red-rank" style={{float: 'center'}}> Rank 3 </span>
         <div className="row"><WRThumbnail stream={this.props.stream} run={this.props.wrVideos[3]} gameArt={this.props.gameArt}/></div>
         {this.twitchStreamEmbeds()}
       </div>

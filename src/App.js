@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar/>
-        <div>
+        <div className="not-nav">
         {this.props.children}
         </div>
       </div>
