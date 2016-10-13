@@ -28,7 +28,7 @@ class SideBar extends React.Component {
               </iframe>
 
               <div className='row' >
-                <button className='btn btn-danger btn-xs' onClick={()=>{this.props.stream(twitchBaseUrl1)}} >Watch</button>
+                <button className='btn btn-danger btn-xs' onClick={()=>{this.props.stream(twitchBaseUrl1)}} >Watch Live</button>
               </div>
             </div>
 
@@ -45,7 +45,7 @@ class SideBar extends React.Component {
               </iframe>
 
               <div className='row' >
-                <button className='btn btn-danger btn-xs' onClick={()=>{this.props.stream(twitchBaseUrl2)}} >Watch</button>
+                <button className='btn btn-danger btn-xs' onClick={()=>{this.props.stream(twitchBaseUrl2)}} >Watch Live</button>
               </div>
             </div>
           </div>
