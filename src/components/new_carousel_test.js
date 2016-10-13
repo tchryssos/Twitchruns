@@ -59,7 +59,7 @@ function NewCarousel (props) {
                 </Carousel>
 
                 <div className='row'>
-                  <h3>Select a speedrun from above or search by game, category, or runner!</h3>
+                  <h3>Select a speedrun from above or filter the browser by game, category, or runner! <br/> Click the Twitchruns console to return to the browser.</h3>
                 </div>
 
               </div>)
