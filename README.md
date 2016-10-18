@@ -14,11 +14,12 @@ game or a selected part, such as a single level.
 -2--- Purpose of Application
 
 TWITCHRUNS brings together world-record breaking runs (source: SpeedRun API) and 
-live streams (source: Twitch API) of twenty most popular games, utilizes a custom 
-Rails API (source: https://github.com/tchryssos/Twitchruns-API).
+live streams (source: Twitch API) of twenty most popular games on Speedrun.com, utilizes
+a custom Rails API (source: https://github.com/tchryssos/Twitchruns-API).
+
 TWITCHRUNS provides a simple and to-the-point access to Twitch streams and Speedruns of 
 a given game, suggests videos in the same leaderboard-category as the selected run, allows
-users to search runs, and offers a refreshing UX with it's early-internet inspired style. 
+users to search runs, and offers a refreshing UX with its early-internet inspired style. 
 
 -3-- Deployment Instructions
 
