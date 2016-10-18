@@ -1,13 +1,6 @@
 
 TWITCHRUNS is an application that brings together Twitch and Speedruns.
 
-    Table of Contents
-
--1--- Speedrun & Twitch Definitions 
--2--- Purpose of Application 
--3--- Deployment Instructions 
-
-
 -1--- Speedrun & Twitch Definitions 
 
 TWITCH (aka Twitch.tv):  A live streaming video website founded in 2011, primarily 
